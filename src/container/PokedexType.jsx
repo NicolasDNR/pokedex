@@ -60,15 +60,32 @@ function App() {
       <div>
         {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
           <>
-            <input
-            type="text"
-            placeholder="Enter pokemon name"
-            onChange={handleChange}
-            />
+          <select
+          onChange={handleChange}>
+              <option value="">Choose...</option>
+              <option value="normal">Normal</option>
+              <option value="grass">Grass</option>
+              <option value="fire">Fire</option>
+              <option value="water">Water</option>
+              <option value="fighting">Fighting</option>
+              <option value="flying">Flying</option>
+              <option value="poison">Poison</option>
+              <option value="ground">Ground</option> 
+              <option value="rock">Rock</option>
+              <option value="bug">Bug</option>
+              <option value="ghost">Ghost</option>
+              <option value="electric">Electric</option>
+              <option value="psychic">Psychic</option>
+              <option value="ice">Ice</option>
+              <option value="dragon">Dragon</option>
+              <option value="dark">Dark</option>
+              <option value="steel">Steel</option>
+              <option value="fairy">Fairy</option>
+            </select>
             <div className="grid-container">
               {pokemonData
               .filter(({ ...pokemon }) => {
-                return pokemon.name.toLowerCase().includes(pokemonSearch.toLowerCase());
+                return pokemon.types[0].type.name.toLowerCase().includes(pokemonSearch.toLowerCase());
               })
               .map((pokemon, i) => {
                 return <Card key={i} pokemon={pokemon} />
