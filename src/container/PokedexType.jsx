@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { getPokemon, getAllPokemon } from '../components/GetPokemon/GetPokemon.jsx';
 import CardList from '../components/Card/CardList.jsx';
 
-
 function PokedexType() {
   const [pokemonData, setPokemonData] = useState([])
   const [loading, setLoading] = useState(true);
@@ -11,7 +10,7 @@ function PokedexType() {
 
   useEffect(() => {
     async function fetchData() {
-      let res = await getAllPokemon(`https://pokeapi.co/api/v2/pokemon`)
+      let res = await getAllPokemon(`https://pokeapi.co/api/v2/pokemon/?limit=151`)
       await loadPokemon(res.results);
       setLoading(false);
     }
@@ -63,7 +62,7 @@ function PokedexType() {
             <div className="grid-container">
               {pokemonData
               .filter(({ ...pokemon }) => {
-                return pokemon.types[0].type.name.toLowerCase().includes(pokemonSearch.toLowerCase());
+                return (pokemon.types[0].type.name.includes(pokemonSearch));
               })
               .map((pokemon, index) => {
                 return <CardList key={index} pokemon={pokemon} />

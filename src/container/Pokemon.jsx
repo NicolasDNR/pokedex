@@ -8,15 +8,15 @@ import Card from '../components/Card/Card';
 function Pokemon() {
   const [pokemonData, setPokemonData] = useState([])
   const [loading, setLoading] = useState(true);
-  const { pokemonID } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     async function fetchData() {
-      let res = await getAllPokemon(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`)
+      let res = await getAllPokemon(`https://pokeapi.co/api/v2/pokemon/${id}`)
       await loadPokemon(res.results);
       setLoading(false);
     }
-    fetchData(pokemonID);
+    fetchData(id);
   })
 
   const loadPokemon = async (data) => {
@@ -36,7 +36,7 @@ function Pokemon() {
             <div className="grid-container">
               {pokemonData
               .map((pokemon, index) => {
-                return <Card key={index}>{pokemon.results}</Card>
+                return <Card key={index}>{pokemon.id}</Card>
               })}
             </div>
           </>

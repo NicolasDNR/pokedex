@@ -10,7 +10,7 @@ function Pokedex() {
 
   useEffect(() => {
     async function fetchData() {
-      let res = await getAllPokemon(`https://pokeapi.co/api/v2/pokemon`)
+      let res = await getAllPokemon(`https://pokeapi.co/api/v2/pokemon/?limit=151`)
       await loadPokemon(res.results);
       setLoading(false);
     }
