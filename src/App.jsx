@@ -8,7 +8,6 @@ import Formulaire from "./container/Formulaire.jsx";
 import Navbar from "./components/Header/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
-
 import "./App.css";
 import "./components/Style/style.css"
 

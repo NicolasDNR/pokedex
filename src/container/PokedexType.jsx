@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { getPokemon, getAllPokemon } from '../components/GetPokemon/GetPokemon.jsx';
-import Card from '../components/Card/Card';
+import CardList from '../components/Card/CardList.jsx';
 
 
 function PokedexType() {
@@ -31,15 +31,15 @@ function PokedexType() {
     setPokemonSearch(value); 
   }
 
-
   return (
     <>
       <div>
         {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
           <>
+          <div className="dropdown">
           <select
           onChange={handleChange}>
-              <option value="">Choose...</option>
+              <option value="">Choose type...</option>
               <option value="normal">Normal</option>
               <option value="grass">Grass</option>
               <option value="fire">Fire</option>
@@ -59,13 +59,14 @@ function PokedexType() {
               <option value="steel">Steel</option>
               <option value="fairy">Fairy</option>
             </select>
+            </div>
             <div className="grid-container">
               {pokemonData
               .filter(({ ...pokemon }) => {
                 return pokemon.types[0].type.name.toLowerCase().includes(pokemonSearch.toLowerCase());
               })
               .map((pokemon, index) => {
-                return <Card key={index} pokemon={pokemon} />
+                return <CardList key={index} pokemon={pokemon} />
               })}
             </div>
           </>

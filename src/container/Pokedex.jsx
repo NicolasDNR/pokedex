@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { getPokemon, getAllPokemon } from '../components/GetPokemon/GetPokemon.jsx';
-import Card from '../components/Card/Card';
+import CardList from '../components/Card/CardList.jsx';
 
 function Pokedex() {
   const [pokemonData, setPokemonData] = useState([])
@@ -39,6 +39,7 @@ function Pokedex() {
             type="text"
             placeholder="Enter pokemon name"
             onChange={handleChange}
+            className="search__bar"
             />
             <div className="grid-container">
               {pokemonData
@@ -46,7 +47,7 @@ function Pokedex() {
                 return pokemon.name.toLowerCase().includes(pokemonSearch.toLowerCase());
               })
               .map((pokemon, index) => {
-                return <Card key={index} pokemon={pokemon} />
+                return <CardList key={index} pokemon={pokemon} />
               })}
             </div>
           </>
