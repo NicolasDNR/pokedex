@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "./Form.css"
+import "./form.css"
 
 function Form({ addFormulaire }) {
     const [value, setValue] = useState('');
@@ -18,24 +18,24 @@ function Form({ addFormulaire }) {
     return (
         <>
         <form onSubmit={handleSubmit} className="contact__form grid"> 
-        <h2 class="section__title">Contact Me</h2>
-              <div class="contact__container container grid">
+        <h2 className="section__title">Contact Me</h2>
+              <div className="contact__container container grid">
 
-                  <div class="grid">
-                    <div class="contact__content">
-                      <label for="" class="contact__label">Name</label>
-                      <input onChange={handleChange} type="text" class="contact__input" />
+                  <div className="grid">
+                    <div>
+                      <label className="contact__label">Name</label>
+                      <input onChange={handleChange} type="text" className="contact__input" />
                     </div>
 
-                    <div class="contact__content">
-                      <label for="" class="contact__label">Email</label>
-                      <input onChange={handleChange} type="email" class="contact__input" />
+                    <div>
+                      <label className="contact__label">Email</label>
+                      <input onChange={handleChange} type="email" className="contact__input" />
                     </div>
                   </div>
 
-                  <div class="contact__content">
-                    <label for="" class="contact__label">Message</label>
-                    <textarea onChange={handleChange} name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                  <div>
+                    <label className="contact__label">Message</label>
+                    <textarea onChange={handleChange} name="" id="" cols="0" rows="7" className="contact__input"></textarea>
                   </div>
 
                   <button className="contact__button">Send</button>
