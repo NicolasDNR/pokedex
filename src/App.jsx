@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer.jsx";
 
 
 import "./App.css";
+import "./components/Style/style.css"
 
 class App extends Component {
   render() {
