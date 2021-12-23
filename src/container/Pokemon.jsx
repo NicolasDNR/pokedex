@@ -5,39 +5,30 @@ import { getPokemon, getAllPokemon } from '../components/GetPokemon/GetPokemon.j
 import Card from '../components/Card/Card';
 
 
-function Pokemon() {
+function Pokemon() {  
   const [pokemonData, setPokemonData] = useState([])
   const [loading, setLoading] = useState(true);
-  const { id } = useParams();
+  const { name } = useParams();
+
+  
 
   useEffect(() => {
     async function fetchData() {
-      let res = await getAllPokemon(`https://pokeapi.co/api/v2/pokemon/${id}`)
-      await loadPokemon(res.results);
+      let res = await getAllPokemon(`https://pokeapi.co/api/v2/pokemon/${name}`)
+      console.log(res); 
+      setPokemonData(res);   
       setLoading(false);
     }
-    fetchData(id);
+    fetchData();
   })
-
-  const loadPokemon = async (data) => {
-    let _pokemonData = await Promise.all(data.map(async pokemon => {
-      let pokemonRecord = await getPokemon(pokemon)
-      return pokemonRecord
-    }))
-    setPokemonData(_pokemonData);
-  }
-
 
   return (
     <>
       <div>
         {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
           <>
-            <div className="grid-container">
-              {pokemonData
-              .map((pokemon, index) => {
-                return <Card key={index}>{pokemon.id}</Card>
-              })}
+            <div>
+              <Card pokemon={pokemonData} />
             </div>
           </>
         )}

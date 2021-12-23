@@ -35,6 +35,7 @@ function Pokedex() {
       <div>
       {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
           <>
+            
             <input
             type="text"
             placeholder="Enter pokemon name"

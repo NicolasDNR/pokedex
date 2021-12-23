@@ -2,33 +2,33 @@ import typeColors from "./TypesColor";
 
 function Card({ pokemon }) {
     return (
-        <div className="Card">
-            <div className="Card__img">
+        <div>
+            <div>
                 <img src={pokemon.sprites.front_default} alt="" />
             </div>
-            <div className="Card__name">
-                <a href={`/pokemon/${pokemon.id}`}>{pokemon.name}</a>       
+            <div>
+                {pokemon.name}     
             </div>
-            <div className="Card__types">
+            <div>
                 {pokemon.types.map(type => {
                         return (
-                            <div className="Card__type" style={{ backgroundColor: typeColors[type.type.name] }}>
+                            <div style={{ backgroundColor: typeColors[type.type.name] }}>
                                 {type.type.name}
                             </div>
                         )
                     })}
             </div>
-            <div className="Card__info">
-                <div className="Card__data Card__data--weight">
-                    <p className="title">Weight</p>
+            <div>
+                <div>
+                    <p>Weight</p>
                     <p>{pokemon.weight}</p>
                 </div>
-                <div className="Card__data Card__data--weight">
-                    <p className="title">Height</p>
+                <div>
+                    <p>Height</p>
                     <p>{pokemon.height}</p>
                 </div>
-                <div className="Card__data Card__data--move">
-                    <p className="title">Moves</p>
+                <div>
+                    <p>Moves</p>
                     {pokemon.moves[0].move.name}<br />
                     {pokemon.moves[1].move.name}<br />
                     {pokemon.moves[2].move.name}

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { getPokemon, getAllPokemon } from '../components/GetPokemon/GetPokemon.jsx';
 import CardList from '../components/Card/CardList.jsx';
 
-function PokedexType() {
+function PokedexType({ pokemon }) {
   const [pokemonData, setPokemonData] = useState([])
   const [loading, setLoading] = useState(true);
   const [pokemonSearch, setPokemonSearch] = useState("");
@@ -62,7 +62,7 @@ function PokedexType() {
             <div className="grid-container">
               {pokemonData
               .filter(({ ...pokemon }) => {
-                return (pokemon.types[0].type.name.includes(pokemonSearch));
+                return pokemon.types[0].type.name.includes(pokemonSearch);
               })
               .map((pokemon, index) => {
                 return <CardList key={index} pokemon={pokemon} />
