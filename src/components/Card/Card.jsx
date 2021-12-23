@@ -1,4 +1,5 @@
 import typeColors from "./TypesColor";
+import "./card.css";
 
 function Card({ pokemon }) {
     return (
@@ -9,10 +10,10 @@ function Card({ pokemon }) {
             <div>
                 {pokemon.name}     
             </div>
-            <div>
+            <div className="Card__types">
                 {pokemon.types.map(type => {
                         return (
-                            <div style={{ backgroundColor: typeColors[type.type.name] }}>
+                            <div className="Card__type" style={{ backgroundColor: typeColors[type.type.name] }}>
                                 {type.type.name}
                             </div>
                         )

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { getPokemon, getAllPokemon } from '../components/GetPokemon/GetPokemon.jsx';
 import CardList from '../components/Card/CardList.jsx';
+import Loader from '../components/Loader/Loader.jsx';
 
 function PokedexType({ pokemon }) {
   const [pokemonData, setPokemonData] = useState([])
@@ -33,7 +34,7 @@ function PokedexType({ pokemon }) {
   return (
     <>
       <div>
-        {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
+        {loading ? <Loader /> : (
           <>
           <div className="dropdown">
           <select

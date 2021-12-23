@@ -12,7 +12,7 @@ function Formulaire() {
 
     return (
         <>
-        <Form addFormulaire={addFormulaire} />
+            <Form addFormulaire={addFormulaire} />
         </>
     )
 }

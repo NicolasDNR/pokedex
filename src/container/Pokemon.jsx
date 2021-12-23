@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getPokemon, getAllPokemon } from '../components/GetPokemon/GetPokemon.jsx';
+import { getAllPokemon } from '../components/GetPokemon/GetPokemon.jsx';
 import Card from '../components/Card/Card';
-
+import Loader from '../components/Loader/Loader.jsx';
 
 function Pokemon() {  
   const [pokemonData, setPokemonData] = useState([])
@@ -15,7 +15,6 @@ function Pokemon() {
   useEffect(() => {
     async function fetchData() {
       let res = await getAllPokemon(`https://pokeapi.co/api/v2/pokemon/${name}`)
-      console.log(res); 
       setPokemonData(res);   
       setLoading(false);
     }
@@ -25,7 +24,7 @@ function Pokemon() {
   return (
     <>
       <div>
-        {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
+        {loading ?<Loader /> : (
           <>
             <div>
               <Card pokemon={pokemonData} />

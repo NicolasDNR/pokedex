@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import { getPokemon, getAllPokemon } from '../components/GetPokemon/GetPokemon.jsx';
 import CardList from '../components/Card/CardList.jsx';
+import Loader from '../components/Loader/Loader.jsx';
 
-function Pokedex() {
+function Pokedex({ addSearch }) {
   const [pokemonData, setPokemonData] = useState([])
   const [loading, setLoading] = useState(true);
   const [pokemonSearch, setPokemonSearch] = useState("");
@@ -30,12 +31,17 @@ function Pokedex() {
     setPokemonSearch(value); 
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addSearch(pokemonData);
+  }
+
   return (
     <>
       <div>
-      {loading ? <h1 style={{ textAlign: 'center' }}>Loading...</h1> : (
+      {loading ? <Loader /> : (
           <>
-            
+            <form onSubmit={handleSubmit}>
             <input
             type="text"
             placeholder="Enter pokemon name"
@@ -51,6 +57,7 @@ function Pokedex() {
                 return <CardList key={index} pokemon={pokemon} />
               })}
             </div>
+            </form>
           </>
       )}
       </div>
