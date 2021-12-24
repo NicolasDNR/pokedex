@@ -1,0 +1,9 @@
+.Modal .openModalBtn {
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    color: black;
+    cursor: pointer;
+    background-color: var(--first-color-lighter);
+  }

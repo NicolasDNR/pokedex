@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import "./form.css"
+import "./modalForm.css";
 
-function Form({ addFormulaire }) {
+function ModalForm({ addFormulaire, setOpenModal }) {
     const [value, setValue] = useState('');
 
     const handleSubmit = (e) => {
@@ -16,10 +16,19 @@ function Form({ addFormulaire }) {
     }
 
     return (
-        <>
-        <form onSubmit={handleSubmit} className="contact__form grid"> 
+    <div className="modalBackground">
+      <div className="modalContainer">
+        <div className="titleCloseBtn">
+          <button
+            onClick={() => { setOpenModal(false); }}
+          >
+            X
+          </button>
+        </div>
+
+        <form onSubmit={handleSubmit} className="grid"> 
         <h2 className="section__title">Contact Me</h2>
-              <div className="contact__container container grid">
+              <div className="contact__container grid">
 
                   <div className="grid">
                     <div>
@@ -42,8 +51,10 @@ function Form({ addFormulaire }) {
 
              </div>
         </form>
-        </>
+
+      </div>
+    </div>
     )
 }
 
-export default Form;
+export default ModalForm;

@@ -4,6 +4,8 @@ import { getPokemon, getAllPokemon } from '../services';
 
 import { Loader, CardList } from '../components';
 
+import "./pokedex.css";
+
 function Pokedex({ addSearch }) {
   const [pokemonData, setPokemonData] = useState([])
   const [loading, setLoading] = useState(true);

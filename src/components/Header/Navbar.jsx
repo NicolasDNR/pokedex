@@ -24,14 +24,6 @@ function Navbar() {
                   Types
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  Contact
-                </NavLink>
-              </li>
             </ul>
           </nav>
         </header>

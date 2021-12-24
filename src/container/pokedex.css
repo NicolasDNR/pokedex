@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    width: 70%;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
+}
+  
+.search__bar {
+    border-radius: 0.5rem;
+    margin-bottom: var(--mb-3);
+    margin-top: var(--mb-2);
+    height: 4rem;
+    font-family: var(--body-font);
+    border: 0;
+    color: black;
+    font-size: 1rem;
+    width: 20rem;
+}
+  
+input::placeholder {
+    color: black;
+    text-align: center;
+}
+
+.dropdown{
+    border-radius: 0.5rem;
+    margin-bottom: var(--mb-3);
+    margin-top: var(--mb-3);
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }

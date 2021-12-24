@@ -5,12 +5,14 @@ function Footer() {
         <footer className="footer">
             <div className="footer__bg">
               <div className="footer__container grid">
+
                 <div>
                   <h2 className="footer__title">Pokedex</h2>
-                  <span className="footer__subtitle">PokeAPI</span>
+                  <span className="footer__subtitle">PokeAPI</span><br/>
                 </div>
 
               <p className="footer__copy">&copy; Denoyer Nicolas. All right reserved.</p>
+
               </div>
             </div>
         </footer>
