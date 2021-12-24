@@ -1,4 +1,4 @@
-.nav__link {
+.nav__link{
     ul {
       display: flex;
       list-style: none;
@@ -8,6 +8,7 @@
       font-size: calc(5px + 2vmin);
       padding-top: 1rem;
       padding-bottom: 1rem;
+      margin-top: 0;
   
       li {
         padding: 8px 24px;
@@ -23,15 +24,3 @@
       }
     }
   } 
-
-  
-  
-  .Modal .openModalBtn {
-    width: 200px;
-    height: 40px;
-    border: none;
-    border-radius: 6px;
-    background-color: cornflowerblue;
-    color: white;
-    cursor: pointer;
-  }

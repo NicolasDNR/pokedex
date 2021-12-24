@@ -6,7 +6,7 @@ import { Navbar, Footer } from "./components";
 import { Pokedex, PokedexType, Pokemon } from "./container";
 
 import "./App.css";
-import "./Styles/style.css"
+import "./styles/style.css"
 
 class App extends Component {
   render() {
