@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import { getPokemon, getAllPokemon } from '../components/GetPokemon/GetPokemon.jsx';
-import CardList from '../components/Card/CardList.jsx';
-import Loader from '../components/Loader/Loader.jsx';
+import { getPokemon, getAllPokemon } from '../services';
+
+import { Loader, CardList } from '../components';
 
 function Pokedex({ addSearch }) {
   const [pokemonData, setPokemonData] = useState([])

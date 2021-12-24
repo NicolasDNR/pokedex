@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getAllPokemon } from '../components/GetPokemon/GetPokemon.jsx';
-import Card from '../components/Card/Card';
-import Loader from '../components/Loader/Loader.jsx';
+import { getAllPokemon } from '../services';
+
+import { Loader, Card } from '../components';
 
 function Pokemon() {  
   const [pokemonData, setPokemonData] = useState([])

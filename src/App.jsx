@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import Pokedex from "./container/Pokedex.jsx";
-import PokedexType from "./container/PokedexType.jsx";
-import Pokemon from "./container/Pokemon.jsx";
-import Formulaire from "./container/Formulaire.jsx";
-import Navbar from "./components/Header/Navbar.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+import { Navbar, Footer } from "./components";
+
+import { Pokedex, PokedexType, Pokemon, Formulaire } from "./container";
 
 import "./App.css";
 import "./components/Style/style.css"
