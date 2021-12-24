@@ -1,3 +1,5 @@
+import { Modal } from "..";
+
 import "./footer.css";
 
 function Footer() {
@@ -9,6 +11,10 @@ function Footer() {
                 <div>
                   <h2 className="footer__title">Pokedex</h2>
                   <span className="footer__subtitle">PokeAPI</span><br/>
+                </div>
+
+                <div className="footer__modal">
+                  <Modal />
                 </div>
 
               <p className="footer__copy">&copy; Denoyer Nicolas. All right reserved.</p>

@@ -47,7 +47,7 @@ function ModalForm({ addFormulaire, setOpenModal }) {
                     <textarea onChange={handleChange} name="" id="" cols="0" rows="7" className="contact__input"></textarea>
                   </div>
 
-                  <button className="contact__button">Send</button>
+                  <button type="submit" className="contact__button">Send</button>
 
              </div>
         </form>

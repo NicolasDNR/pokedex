@@ -33,3 +33,8 @@
 .footer__subtitle {
     color: #fff;
 }
+
+.footer__modal{
+    margin-top: var(--mb-1);
+    margin-bottom: var(--mb-2);
+}

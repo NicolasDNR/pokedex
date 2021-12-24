@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Routes, Route } from "react-router-dom";
 
-import { Navbar, Footer, Modal } from "./components";
+import { Navbar, Footer } from "./components";
 
 import { Pokedex, PokedexType, Pokemon } from "./container";
 
@@ -13,7 +13,6 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Modal />
         <Routes>
           <Route path="/" element={<Pokedex />} />
           <Route path="/types" element={<PokedexType />} />
