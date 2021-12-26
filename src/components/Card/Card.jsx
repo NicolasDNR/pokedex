@@ -11,7 +11,7 @@ function Card({ pokemon }) {
                         <img className="card__img" src={pokemon.sprites.front_default} alt="" />
                     </div>
                     <div className="card__name">
-                        {pokemon.name}     
+                        <h1>{pokemon.name}</h1>   
                     </div>
                     <div className="card__types">
                         {pokemon.types.map(type => {
@@ -38,7 +38,7 @@ function Card({ pokemon }) {
             
             <div className="card__containers">
                 <div className="card__div">
-                    <p>Moves</p>
+                    <h3>Moves</h3>
                         <div className="card__moves">
                             <div>
                                 {pokemon.moves[0].move.name}
@@ -56,7 +56,7 @@ function Card({ pokemon }) {
             
             <div className="card__containers">
                 <div className="card__div">
-                    <p>Base Stats</p>
+                    <h3>Base Stats</h3>
                     <div className="card__stats">
                         <div>
                             hp: {pokemon.stats[0].base_stat}

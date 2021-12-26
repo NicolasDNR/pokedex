@@ -20,7 +20,7 @@
     border-radius: 10px;
     padding-top: 1rem;
     padding-bottom: 1.5rem;
-    margin-top: 2rem;
+    margin-top: var(--mb-2);
     background-color: white;
 }
 
@@ -30,10 +30,14 @@
 
 .card__img{
     height: 16em;
+    border: 4mm ridge rgba(241, 241, 200, .6);
+    border-radius: 100%;
+    color: black;
 }
 
 .card__name {
-    margin-bottom: 1rem;
+    margin-bottom: var(--mb-1);
+    text-align: center;
 }
 
 .card__container {
