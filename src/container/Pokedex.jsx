@@ -5,6 +5,7 @@ import { getPokemon, getAllPokemon } from '../services';
 import { Loader, CardList } from '../components';
 
 import "./pokedex.css";
+import { Link } from 'react-router-dom';
 
 function Pokedex({ addSearch }) {
   const [pokemonData, setPokemonData] = useState([])
@@ -33,6 +34,7 @@ function Pokedex({ addSearch }) {
     setPokemonSearch(value); 
   }
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     addSearch(pokemonData);
@@ -50,6 +52,14 @@ function Pokedex({ addSearch }) {
             onChange={handleChange}
             className="search__bar"
             />
+            <Link to={`?search=${pokemonSearch}`}>
+              <button 
+              type='submit' 
+              className='search__button'
+              >
+                search
+              </button>
+            </Link>
             <div className="grid__container">
               {pokemonData
               .filter(({ ...pokemon }) => {

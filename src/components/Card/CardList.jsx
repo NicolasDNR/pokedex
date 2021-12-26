@@ -8,12 +8,12 @@ function CardList({ pokemon }) {
         <>
         <div className="Card">
 
-            <Link to={`/pokemon/${pokemon.name}`}>
+            <Link to={`/pokemon/${pokemon.name}`} className="Card__link">
             <div className="Card__img">
                 <img src={pokemon.sprites.front_default} alt="" />
             </div>
             <div className="Card__name">
-                {pokemon.name}      
+                {pokemon.name}   
             </div>
             </Link>  
             

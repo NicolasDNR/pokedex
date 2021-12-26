@@ -21,6 +21,10 @@
 
 .Card__name {
     text-align: center;
-    text-transform: capitalize;
     font-weight: 800;
+}
+
+.Card__link {
+    text-decoration: none;
+    color: black;
 }
