@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import { Navbar, Footer } from "./components";
 
-import { Pokedex, PokedexType, Pokemon } from "./container";
+import { Pokedex, PokedexFav, PokedexType, Pokemon } from "./container";
 
 import "./App.css";
 import "./Styles/style.css"
@@ -16,7 +16,8 @@ class App extends Component {
         <Routes>
           <Route path="/" element={<Pokedex />} />
           <Route path="/types" element={<PokedexType />} />
-          <Route path="/pokemon/:name" element={<Pokemon />} />   
+          <Route path="/pokemon/:name" element={<Pokemon />} />  
+          <Route path="/favorites" element={<PokedexFav />} /> 
         </Routes>
         <Footer />
       </div>

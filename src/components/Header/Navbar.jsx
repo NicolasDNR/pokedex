@@ -24,6 +24,14 @@ function Navbar() {
                   Types
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/favorites"
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  Favorites
+                </NavLink>
+              </li>
             </ul>
           </nav>
         </header>

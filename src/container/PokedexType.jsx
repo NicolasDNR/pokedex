@@ -21,11 +21,11 @@ function PokedexType() {
   }, [])
 
   const loadPokemon = async (data) => {
-    let _pokemonData = await Promise.all(data.map(async pokemon => {
+    let pokemonDatas = await Promise.all(data.map(async pokemon => {
       let pokemonRecord = await getPokemon(pokemon)
       return pokemonRecord
     }))
-    setPokemonData(_pokemonData);
+    setPokemonData(pokemonDatas);
   }
 
   const handleChange = (e) => {

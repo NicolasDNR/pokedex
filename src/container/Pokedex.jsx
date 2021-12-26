@@ -5,7 +5,6 @@ import { getPokemon, getAllPokemon } from '../services';
 import { Loader, CardList } from '../components';
 
 import "./pokedex.css";
-import { Link } from 'react-router-dom';
 
 function Pokedex({ addSearch }) {
   const [pokemonData, setPokemonData] = useState([])
@@ -22,18 +21,17 @@ function Pokedex({ addSearch }) {
   }, [])
 
   const loadPokemon = async (data) => {
-    let _pokemonData = await Promise.all(data.map(async pokemon => {
+    let pokemonDatas = await Promise.all(data.map(async pokemon => {
       let pokemonRecord = await getPokemon(pokemon)
       return pokemonRecord
     }))
-    setPokemonData(_pokemonData);
+    setPokemonData(pokemonDatas);
   }
 
   const handleChange = (e) => {
     const value = (e.target.value);
     setPokemonSearch(value); 
   }
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,7 +42,7 @@ function Pokedex({ addSearch }) {
     <>
       <div>
       {loading ? <Loader /> : (
-          <>
+         <>
             <form onSubmit={handleSubmit}>
             <input
             type="text"
@@ -52,14 +50,6 @@ function Pokedex({ addSearch }) {
             onChange={handleChange}
             className="search__bar"
             />
-            <Link to={`?search=${pokemonSearch}`}>
-              <button 
-              type='submit' 
-              className='search__button'
-              >
-                search
-              </button>
-            </Link>
             <div className="grid__container">
               {pokemonData
               .filter(({ ...pokemon }) => {
@@ -67,10 +57,11 @@ function Pokedex({ addSearch }) {
               })
               .map((pokemon, index) => {
                 return <CardList key={index} pokemon={pokemon} />
-              })}
+              })
+              }
             </div>
             </form>
-          </>
+         </>
       )}
       </div>
     </>
