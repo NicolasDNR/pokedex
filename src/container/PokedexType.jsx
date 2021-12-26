@@ -62,7 +62,7 @@ function PokedexType() {
               <option value="fairy">Fairy</option>
             </select>
             </div>
-            <div className="grid-container">
+            <div className="grid__container">
               {pokemonData
               .filter(({ ...pokemon }) => {
                 return pokemon.types[0].type.name.includes(pokemonSearch);

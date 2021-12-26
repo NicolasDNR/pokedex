@@ -1,31 +1,32 @@
-.footer{
+.footer {
     padding-top: 7rem;
     justify-content: center;
+    margin-bottom: 0;
 }
 
-.footer__container{
+.footer__container {
     row-gap: 3.5rem;
 }
 
-.footer__bg{
+.footer__bg {
     background-color: var(--first-color-second);
     padding: 0 0 3rem;
 }
 
-.footer__title{
+.footer__title {
     font-size: var(--h2-font-size);
     margin-bottom: var(--mb-0-25);
     padding-top: 1rem;
 }
 
-.footer__subtitle{
+.footer__subtitle {
     font-size: var(--small-font-size);
 }
 
-.footer__copy{
+.footer__copy {
     font-size: var(--smaller-font-size);
     text-align: center;
-    color: var(--text-color-light);
+    color: white;
     margin-top: 1rem;
 }
 
@@ -34,7 +35,7 @@
     color: #fff;
 }
 
-.footer__modal{
+.footer__modal {
     margin-top: var(--mb-1);
     margin-bottom: var(--mb-2);
 }

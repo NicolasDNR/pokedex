@@ -1,11 +1,41 @@
-.Card__types {
+.card__types {
     display: flex;
     justify-content: center;    
 }
 
-.Card__type {
+.card__type {
     padding: 5px 10px;
     margin: 10px 10px 10px 0;
     border-radius: 5px;
     color: #fff;
+}
+
+.card__containers {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card__div {
+    border-radius: 10px;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    margin-top: 2rem;
+    background-color: white;
+}
+
+.card__moves {
+    justify-content: center;
+}
+
+.card__img{
+    height: 16em;
+}
+
+.card__name {
+    margin-bottom: 1rem;
+}
+
+.card__container {
+    margin-top: 5rem;
 }

@@ -37,21 +37,21 @@
 
 -----------------------------------------------------
 
-.grid{
+.grid {
   display: grid;
   gap: 1.5rem;
 }
 
-.contact__container{
+.contact__container {
   row-gap: 3rem;
 }
 
-.contact__label{
+.contact__label {
   font-size: var(--smaller-font-size);
   color: var(--title-color);
 }
 
-.contact__input{
+.contact__input {
   width: 100%;
   background-color: var(--input-color);
   color: var(--text-color);
@@ -63,7 +63,7 @@
   margin-bottom:var(--mb-1);
 }
 
-.contact__button{
+.contact__button {
   border: none;
   border-radius: 0.5rem;
   width: 100%;

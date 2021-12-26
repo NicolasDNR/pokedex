@@ -50,7 +50,7 @@ function Pokedex({ addSearch }) {
             onChange={handleChange}
             className="search__bar"
             />
-            <div className="grid-container">
+            <div className="grid__container">
               {pokemonData
               .filter(({ ...pokemon }) => {
                 return pokemon.name.toLowerCase().includes(pokemonSearch.toLowerCase());
