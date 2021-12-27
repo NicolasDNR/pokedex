@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 import { getPokemon, getAllPokemon } from '../services';
 
-import { Loader, useBookmarks, typeColors } from '../components';
+import { Loader, useFavorites, CardList } from '../components';
 
 import "./pokedex.css";
 import "../components/Card/cardList.css"
@@ -11,9 +10,9 @@ import "../components/Card/cardList.css"
 function PokedexFav() {
   const [pokemonData, setPokemonData] = useState([])
   const [loading, setLoading] = useState(true);
-  const [bookmarksOnly, setBookmarksOnly] = useState(false);
+  const [favoritesOnly, setfavoritesOnly] = useState(false);
   const [pokemonFav, setPokemonFav] = useState(pokemonData);
-  const [bookmarks, toggleBookmark] = useBookmarks();
+  const [favorites, togglefavorites] = useFavorites();
 
   useEffect(() => {
     async function fetchData() {
@@ -32,53 +31,35 @@ function PokedexFav() {
     setPokemonData(pokemonDatas);
   }
 
-  const changeBookMarksOnly = (e) => {
-    setBookmarksOnly(e.target.checked);
+  const changefavoritesOnly = (e) => {
+    setfavoritesOnly(e.target.checked);
   };
 
   useEffect(() => {
-    setPokemonFav(pokemonData.filter((s) => (bookmarksOnly ? bookmarks.includes(s.id) : s)));
-  }, [pokemonData, bookmarksOnly, bookmarks]);
+    setPokemonFav(pokemonData.filter((s) => (favoritesOnly ? favorites.includes(s.id) : s)));
+  }, [pokemonData, favoritesOnly, favorites]);
 
   return (
     <>
       <div>
       {loading ? <Loader /> : (
           <>
-            <label htmlFor="check">Favorites only</label>
-            <input id={"check"} type="checkbox" value={bookmarksOnly} onChange={changeBookMarksOnly} />
+            <div className='favoritesOnly'>
+                <label htmlFor="check">Favorites only</label>
+                <input id={"check"} type="checkbox" value={favoritesOnly} onChange={changefavoritesOnly} />
+            </div>
             <div className={"pokemon"}>
                 <div className='grid__container'>
                 {pokemonFav.map((pokemon) => {
-                    const isBookmarked = bookmarks.includes(pokemon.id);
+                    const isBookmarked = favorites.includes(pokemon.id);
                     return (
                         <div key={pokemon.id} className={`pokemon ${isBookmarked ? "bookmarked" : ""}`}>
                             <div className="Card">
 
-                                <Link to={`/pokemon/${pokemon.name}`} className="Card__link">
-                                    <div className="Card__img">
-                                        <img src={pokemon.sprites.front_default} alt="" />
-                                    </div>
-                                    <div className="Card__name">
-                                        {pokemon.name}   
-                                    </div>
-                                </Link>  
-
-                                <div className="Card__types">
-                                    {pokemon.types
-                                        .map(type => {
-                                            return (
-                                                <div 
-                                                className="Card__type" 
-                                                style={{ backgroundColor: typeColors[type.type.name] }}>
-                                                    {type.type.name}
-                                                </div>
-                                            )
-                                        })}
-                                </div>
+                                <CardList pokemon={pokemon} />
 
                                 <div>
-                                    <button onClick={toggleBookmark(pokemon.id)}>
+                                    <button className='favorites__button' onClick={togglefavorites(pokemon.id)}>
                                         {isBookmarked ? "Remove from favorites" : "Add to favorites"}
                                     </button>
                                 </div>

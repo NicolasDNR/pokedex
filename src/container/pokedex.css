@@ -40,3 +40,19 @@ input::placeholder {
     justify-content: center;
     position: relative;
   }
+
+  /* ---------- PokedexFav ---------- */
+
+  .favorites__button {
+    border-radius: 0.5rem;
+    margin-bottom: var(--mb-1);
+    border: 0;
+    background-color: var(--first-color-lighter);
+    color: white;
+    padding: 0.5rem;
+  }
+
+  .favoritesOnly {
+    margin-bottom: var(--mb-2);
+    margin-top: var(--mb-3);
+  }

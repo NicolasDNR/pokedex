@@ -1,3 +1,3 @@
-import useBookmarks from "./Favorites";
+import useFavorites from "./Favorites";
 
-export default useBookmarks;
+export default useFavorites;
