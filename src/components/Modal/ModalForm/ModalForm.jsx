@@ -3,11 +3,12 @@ import { useState } from "react";
 import "./modalForm.css";
 
 function ModalForm({ addFormulaire, setOpenModal }) {
-    const [value, setValue] = useState('');
+    const [value , setValue] = useState('');
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        addFormulaire(value);
+      alert('A email was sent');
+      e.preventDefault();
+      addFormulaire(value);
     }
 
     const handleChange = (e) => {
@@ -26,7 +27,7 @@ function ModalForm({ addFormulaire, setOpenModal }) {
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="grid"> 
+        <form action="MAILTO:ndx9895@orange.fr" onSubmit={handleSubmit} className="grid"> 
         <h2 className="section__title">Contact Me</h2>
               <div className="contact__container grid">
 
